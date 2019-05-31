@@ -29,9 +29,11 @@ def self.genres
   @@genres.uniq!
 end
 
-def self.genre_count(genre)
-  genre_count = {}
-  @@genres.each do |genre| genre_count[genre] = genre.count
-end 
-end
+  def self.genre_count
+    genre_hash = Hash.new(0)
+    @@genres.each do |genre|
+      genre_hash[genre] += 1
+    end
+    genre_hash
+  end
 end
