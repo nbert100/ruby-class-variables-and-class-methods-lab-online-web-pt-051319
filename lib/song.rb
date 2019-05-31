@@ -29,7 +29,7 @@ def self.genres
   @@genres.uniq!
 end
 
-def self.genre_count
+def self.genre_count(genre)
   genre_count = {}
   @@genres.each do |genre| genre_count[genre] = genre.count
 end 
